@@ -63,7 +63,7 @@ const Staking = (props) => {
         <h5>My Stake: {props.myStake} Web69Token (WTK) </h5>
         <h5>
           My Estimated Reward:{' '}
-          {((props.myStake * props.apy) / 36500).toFixed(3)} Web69Token (WTK)
+          {((props.myStake * props.apy) / 36500).toFixed(3)} renDoge (renDOGE)
         </h5>
         <h5 onClick={goMax} className={classes.goMax}>
           My balance: {props.userBalance} Web69Token (WTK)
