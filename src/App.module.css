@@ -1,0 +1,35 @@
+.Grid {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: auto auto 38em auto auto;
+  grid-template-rows: 15em auto 25em;
+  height: 100%;
+  font-family: 'VT323', monospace;
+  font-weight: 800;
+}
+
+.Child {
+  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%),
+  linear-gradient(to right, rgb(37, 62, 99), rgb(11, 31, 70));
+  border: none;
+  background-repeat: no-repeat;
+  background-origin: padding-box, border-box;
+  border-radius: 2.5em;
+  grid-column: 3;
+  grid-row: 2;
+  text-align: center;
+  color: white;
+}
+
+.curtain {
+  background-color: rgba(0, 0, 0, 0.466);
+  position: static;
+  height: 99em;
+  width: auto;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  z-index: 2;
+  filter: blur(8px);
+  
+  backdrop-filter: blur(1.5em);
+}

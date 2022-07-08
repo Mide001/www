@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'VT323', monospace;
+}
+
+body {
+  margin: 0;
+  background-image: url('./assets/doge.png');
+  background-size: cover;
+  color: white;
+}
