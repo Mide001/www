@@ -175,7 +175,7 @@ const App = () => {
         setInputValue('');
       } else {
         setLoader(true);
-        let convertToWei = window.web3.utils.toWei(inputValue, 'Gwei');
+        let convertToWei = window.web3.utils.toWei(inputValue, 'Ether');
 
         //aproving tokens for spending
         tokenStakingContract.methods
@@ -231,7 +231,7 @@ const App = () => {
     } else {
       setLoader(true);
 
-      let convertToWei = window.web3.utils.toWei(inputValue, 'Gwei')
+      let convertToWei = window.web3.utils.toWei(inputValue, 'Ether')
       if (page === 1) {
         tokenStakingContract.methods
           .withdraw(convertToWei)
