@@ -30,7 +30,7 @@ const Staking = (props) => {
         <input
           className={classes.input}
           type="number"
-          min="100000"
+          min="100"
           step="1"
           onChange={inputChangeHandler}
           value={inputValue}
@@ -57,16 +57,16 @@ const Staking = (props) => {
       </button>
       <div className={classes.totals}>
         <h4>
-          Total Staked (by all users): {props.totalStaked} Web69Token (WTK)
+          Total Staked (by all users): {props.totalStaked} Web69Token ($Web69)
         </h4>
         <div>&nbsp;</div>
-        <h5>My Stake: {props.myStake} Web69Token (WTK) </h5>
+        <h5>My Stake: {props.myStake} Web69Token ($Web69) </h5>
         <h5>
           My Estimated Reward:{' '}
           {((props.myStake * props.apy) / 36500).toFixed(3)} renDoge (renDOGE)
         </h5>
         <h5 onClick={goMax} className={classes.goMax}>
-          My balance: {props.userBalance} Web69Token (WTK)
+          My balance: {props.userBalance} Web69Token ($Web69)
         </h5>
       </div>
     </div>

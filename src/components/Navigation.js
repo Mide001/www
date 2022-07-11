@@ -16,18 +16,6 @@ const Navigation = (props) => {
     <div className={classes.navigation}>
       <button
         className={
-          poolStatus === 'default'
-            ? classes.buttonActive
-            : classes.buttonNonActive
-        }
-        onClick={() => {
-          changePool('default');
-        }}
-      >
-        {props.apy[0]}% (APY)
-      </button>
-      <button
-        className={
           poolStatus === 'custom'
             ? classes.buttonActive
             : classes.buttonNonActive

@@ -9,16 +9,16 @@ import {
 export default props => {
   return (
     <Menu>
-      <a className="menu-item" href="/">
+      <a className="menu-item" href="https://www.web69.dog/">
         HOME
       </a>
-      <a className="menu-item" href="/staking">
+      <a className="menu-item" href="/">
         STAKING
       </a>
-      <a className="menu-item" href="/incubator">
+      <a className="menu-item" href="/">
         INCUBATOR
       </a>
-      <a className="menu-item" href="/bridge">
+      <a className="menu-item" href="/">
         BRIDGE
       </a>
       <div class="social-container">

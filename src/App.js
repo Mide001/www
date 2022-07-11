@@ -47,15 +47,15 @@ const App = () => {
       //loading users network ID and name
       const networkId = await web3.eth.net.getId();
       const networkType = await web3.eth.net.getNetworkType();
-      setNetwork({ ...network, id: networkId, name: networkType });
+      setNetwork({ ...network, name: networkType });
 
       //loading TestToken contract data
-   /*   const testTokenData = TestToken.networks[networkId];
+    const testTokenData = TestToken;
       if (testTokenData) {
         let web3 = window.web3;
         const testToken = new web3.eth.Contract(
-          TestToken.abi,
-          testTokenData.address
+          TestToken,
+          '0xd4eb79a193e7e1a7b998202a9407e5ce3ff02b4f'
         );
         setTestTokenContract(testToken);
         //  fetching balance of Testtoken and storing in state
@@ -64,11 +64,11 @@ const App = () => {
           .call();
         let convertedBalance = window.web3.utils.fromWei(
           testTokenBalance.toString(),
-          'Ether'
+          'Gwei'
         );
         setUserBalance(convertedBalance);
 
-        //fetching contract balance
+       /* //fetching contract balance
         //updating total staked balance
         const tempBalance = TokenStaking.networks[networkId];
         let totalStaked = await testToken.methods
@@ -85,8 +85,8 @@ const App = () => {
         setAppStatus(false);
         window.alert(
           'TestToken contract is not deployed on this network, please change to testnet'
-        );
-      } */
+        );*/
+      } 
 
       //loading TokenStaking contract data
       const tokenStakingData = TokenStaking;
@@ -105,7 +105,7 @@ const App = () => {
 
         let convertedBalance = window.web3.utils.fromWei(
           myStake.toString(),
-          'Ether'
+          'Gwei'
         );
 
         let myCustomStake = await tokenStaking.methods
@@ -114,7 +114,7 @@ const App = () => {
 
         let tempCustomdBalance = window.web3.utils.fromWei(
           myCustomStake.toString(),
-          'Ether'
+          'Gwei'
         );
 
         setMyStake([convertedBalance, tempCustomdBalance]);
@@ -123,14 +123,14 @@ const App = () => {
         let tempTotalStaked = await tokenStaking.methods.totalStaked().call();
         convertedBalance = window.web3.utils.fromWei(
           tempTotalStaked.toString(),
-          'Ether'
+          'Gwei'
         );
         let tempcustomTotalStaked = await tokenStaking.methods
           .customTotalStaked()
           .call();
         let tempconvertedBalance = window.web3.utils.fromWei(
           tempcustomTotalStaked.toString(),
-          'Ether'
+          'Gwei'
         );
         setTotalStaked([convertedBalance, tempconvertedBalance]);
 
@@ -175,7 +175,7 @@ const App = () => {
         setInputValue('');
       } else {
         setLoader(true);
-        let convertToWei = window.web3.utils.toWei(inputValue, 'Ether');
+        let convertToWei = window.web3.utils.toWei(inputValue, 'Gwei');
 
         //aproving tokens for spending
         tokenStakingContract.methods
@@ -231,7 +231,7 @@ const App = () => {
     } else {
       setLoader(true);
 
-      let convertToWei = window.web3.utils.toWei(inputValue, 'Ether')
+      let convertToWei = window.web3.utils.toWei(inputValue, 'Gwei')
       if (page === 1) {
         tokenStakingContract.methods
           .withdraw(convertToWei)
